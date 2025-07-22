@@ -5,13 +5,17 @@ import static com.codeborne.selenide.Selectors.*;
 import com.codeborne.selenide.Configuration;
 import static com.codeborne.selenide.Condition.*;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import static com.codeborne.selenide.Configuration.*;
 
 public class CardTest {
+    @BeforeAll
+    static void setUp() {
+        browser = "chrome";
+        headless = true;
+    }
 
-    /**
-     * 
-     */
     @Test
     public void testCardFunctionality() {
         open("http://0.0.0.0:9999/");
@@ -22,7 +26,6 @@ public class CardTest {
         $(".paragraph_theme_alfa-on-white").shouldHave(
                 exactText("  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
 
-        
     }
 
     @Test
