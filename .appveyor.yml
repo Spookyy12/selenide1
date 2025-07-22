@@ -5,8 +5,7 @@ stack: jdk 11  # версия JDK
 branches:
   only:
     - main  # ветка git
-run: java -jar ./artifacts/app-order.jar &
-
+    
 build: off  # будем использовать свой скрипт сборки
 
 install:
